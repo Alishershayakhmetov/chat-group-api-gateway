@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/server.js",
-    "dev2": "nodemon --exec tsx src/server.ts"
+    "start": "shx cp .env.production .env && node dist/server.js",
+    "dev": "shx cp .env.development .env && nodemon --exec tsx src/server.ts"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +26,7 @@
     "@types/morgan": "^1.9.9",
     "@types/node": "^22.14.0",
     "nodemon": "^3.1.9",
+    "shx": "^0.4.0",
     "ts-node": "^10.9.2",
     "tsx": "^4.19.3",
     "typescript": "^5.8.3"
